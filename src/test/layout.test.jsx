@@ -6,14 +6,21 @@ const toggle = () => screen.getByRole('button', { name: 'Main navigation' });
 const sidebar = () => screen.getByRole('complementary', { name: 'Sidebar' });
 
 describe('collapsible sidebar', () => {
-  it('starts expanded with labels, sections and zones', () => {
+  it('starts expanded with labels and the Operations heading', () => {
     const { container } = renderApp();
     expect(toggle()).toHaveAttribute('aria-expanded', 'true');
     expect(toggle()).toHaveAttribute('title', 'Collapse sidebar');
     expect(sideNav().getByText('Fleet overview')).toBeInTheDocument();
     expect(screen.getByText('Operations')).toBeInTheDocument();
-    expect(screen.getByText('Zones')).toBeInTheDocument();
     expect(container.firstChild.style.gridTemplateColumns).toBe('236px 1fr');
+  });
+
+  it('no longer lists zones in the sidebar (they stay on the floor map)', async () => {
+    const { user } = renderApp();
+    expect(sidebar()).not.toHaveTextContent('Zones');
+    expect(sidebar()).not.toHaveTextContent('Weld Cells');
+    await goTo(user, 'Floor map');
+    expect(screen.getByText('Zone density')).toBeInTheDocument();
   });
 
   it('collapses to an icon rail and expands again', async () => {

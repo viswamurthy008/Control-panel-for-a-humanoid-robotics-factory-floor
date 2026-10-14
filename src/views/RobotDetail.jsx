@@ -41,10 +41,12 @@ export default function RobotDetail({ v }) {
       <div style={sx('display:flex;align-items:center;gap:14px;margin-bottom:18px')}>
         <span style={sx('position:relative;width:14px;height:14px;flex:none')}><span style={sx(`position:absolute;inset:0;border-radius:9999px;background:${sel.color};${sel.pulse}`)} /></span>
         <div>
-          <h1 style={sx('margin:0;font-size:22px;font-weight:600;font-family:var(--font-mono);letter-spacing:-.01em')}>{sel.id}</h1>
+          <div style={sx('display:flex;align-items:center;gap:10px')}>
+            <h1 style={sx('margin:0;font-size:22px;font-weight:600;font-family:var(--font-mono);letter-spacing:-.01em')}>{sel.id}</h1>
+            <span style={sx(sel.badge)}>{sel.statusLabel}</span>
+          </div>
           <p style={sx('margin:2px 0 0;font-size:13px;color:var(--color-text-subtle)')}>{sel.model} · {sel.zoneName} · uptime {sel.uptime}h</p>
         </div>
-        <span style={sx(sel.badge + ';margin-left:auto')}>{sel.statusLabel}</span>
       </div>
 
       <div style={sx('display:grid;grid-template-columns:1.3fr 1fr;gap:16px;margin-bottom:16px')}>

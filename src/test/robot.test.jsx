@@ -11,7 +11,8 @@ async function openRobot(user, id) {
   expect(screen.getByRole('heading', { level: 1, name: id })).toBeInTheDocument();
 }
 
-const status = () => main().getByRole('heading', { level: 1 }).parentElement.nextSibling.textContent;
+// The status badge sits right beside the robot ID in the page header.
+const status = () => main().getByRole('heading', { level: 1 }).nextSibling.textContent;
 const eventLog = () => main().getByText('Event log').nextSibling;
 
 describe('command palette', () => {
