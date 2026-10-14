@@ -1,6 +1,8 @@
 # Orchestrator — Control Panel
 
-[![CI](https://github.com/viswamurthy008/Control-Panel-implementation/actions/workflows/ci.yml/badge.svg)](https://github.com/viswamurthy008/Control-Panel-implementation/actions/workflows/ci.yml)
+[![CI](https://github.com/viswamurthy008/Control-panel-for-a-humanoid-robotics-factory-floor/actions/workflows/ci.yml/badge.svg)](https://github.com/viswamurthy008/Control-panel-for-a-humanoid-robotics-factory-floor/actions/workflows/ci.yml)
+
+**Live demo:** https://viswamurthy008.github.io/Control-panel-for-a-humanoid-robotics-factory-floor/
 
 A floor-operations console for supervising a fleet of humanoid robots, built with React and Vite from a Claude Design prototype.
 

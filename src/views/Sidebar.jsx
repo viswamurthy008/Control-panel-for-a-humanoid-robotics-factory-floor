@@ -78,21 +78,6 @@ export default function Sidebar({ v }) {
           </button>
         ))}
       </nav>
-
-      {open && (
-        <>
-          <div style={sx('padding:16px 18px 6px;' + SECTION)}>Zones</div>
-          <div style={sx('padding:0 18px;display:flex;flex-direction:column;gap:9px;overflow:auto;flex:1')}>
-            {v.zoneStats.map((z) => (
-              <div key={z.id} style={sx('display:flex;align-items:center;gap:9px;font-size:12.5px')}>
-                <span style={sx(`width:8px;height:8px;border-radius:2px;flex:none;background:${z.color}`)} />
-                <span style={sx('flex:1;color:var(--color-text-subtle)')}>{z.name}</span>
-                <span style={sx('font-family:var(--font-mono);font-size:11.5px;color:var(--color-text-default)')}>{z.count}</span>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
     </aside>
   );
 }
